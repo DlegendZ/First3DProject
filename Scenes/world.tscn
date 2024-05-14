@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0cmbal6g0il6"]
+
+[ext_resource type="PackedScene" uid="uid://olqn75acajt7" path="res://Scenes/player.tscn" id="1_q7t0v"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5ii2v"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ae2m7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7omo"]
+albedo_color = Color(0.596078, 0.411765, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvjt1"]
+albedo_color = Color(0.313726, 1, 0.313726, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6g6qb"]
+albedo_color = Color(0.976471, 0, 0.192157, 1)
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4.75, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+camera_attributes = SubResource("CameraAttributesPractical_5ii2v")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49431, 13.8824)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ae2m7")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(25.605, 0, 0, 0, 3.165, 0, 0, 0, 15.55, 0, -2.14576, 1.93394)
+material = SubResource("StandardMaterial3D_j7omo")
+
+[node name="Landing" type="CSGBox3D" parent="."]
+transform = Transform3D(4.20089, 0, 0, 0, 0.552406, 0, 0, 0, 3.75765, 7.35471, -0.498452, 0.421131)
+material = SubResource("StandardMaterial3D_jvjt1")
+
+[node name="Starting" type="CSGBox3D" parent="."]
+transform = Transform3D(3.53304, 0, 0, 0, 0.535304, 0, 0, 0, 3.34146, -7.70228, -0.324661, 0.097002)
+material = SubResource("StandardMaterial3D_6g6qb")
+
+[node name="Player" parent="." instance=ExtResource("1_q7t0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9744, 0.521607, 0.189165)
