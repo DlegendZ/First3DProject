@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://cn6mcn3s4hukh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvhvm"]
+albedo_color = Color(1, 0.729412, 0.34902, 1)
+
+[sub_resource type="Environment" id="Environment_h8cnx"]
+background_mode = 1
+background_color = Color(0.235294, 0.164706, 0.0627451, 1)
+ambient_light_source = 3
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ff6jm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h61u7"]
+albedo_color = Color(0.596078, 0.411765, 0, 1)
+
+[node name="Environment" type="Node3D"]
+
+[node name="Background" type="Node" parent="."]
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(-0.244538, -1.32511, -0.150896, 1.06514, -0.296122, -0.205208, 0.0775384, -0.111275, 2.34304, -3.06945, 17.9223, -0.856161)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(-0.193018, -1.40324, -0.109362, 1.00932, -0.264131, -0.140498, 0.0519368, -0.0820036, 2.32395, -2.80019, 14.732, 8.40634)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(-0.244538, -1.32511, -0.150896, 1.06514, -0.296122, -0.205208, 0.0775384, -0.111275, 2.34304, 0.931512, 23.3083, 2.78866)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(-0.244538, -1.32511, -0.150896, 1.06514, -0.296122, -0.205208, 0.0775384, -0.111275, 2.34304, 5.0199, 28.8829, 8.82086)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(-0.244538, -1.32511, -0.150896, 1.06514, -0.296122, -0.205208, 0.0775384, -0.111275, 2.34304, 6.35015, 30.2511, -3.69176)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(0.586505, -0.93118, -0.0582511, 0.734152, 0.745917, -0.0309214, 0.0518662, -0.0284365, 1.09639, -6.34273, 19.1919, -1.03351)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(0.558918, -0.983524, -0.0236587, 0.650904, 0.844532, -0.0275524, 0.0280861, 0, 1.10935, -8.34994, 16.4952, 3.82216)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="Wall_Right" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7308, 12.808, 1.83)
+use_collision = true
+size = Vector3(2, 32.951, 17.3776)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="Wall_Left" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6914, 12.8081, 1.83047)
+use_collision = true
+size = Vector3(2, 32.951, 17.3776)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(0.586505, -0.93118, -0.0582511, 0.734152, 0.745917, -0.0309214, 0.0518662, -0.0284365, 1.09639, 0.50014, 19.5445, 0.586902)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(0.586505, -0.93118, -0.0582511, 0.734152, 0.745917, -0.0309214, 0.0518662, -0.0284365, 1.09639, 7.63787, 19.9122, 3.43673)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(0.586505, -0.93118, -0.0582511, 0.734152, 0.745917, -0.0309214, 0.0518662, -0.0284365, 1.09639, 9.04864, 19.9849, -3.1254)
+use_collision = true
+size = Vector3(1.45856, 12.049, 1.63947)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="Wall_Behind" type="CSGBox3D" parent="Background" groups=["Kaboom"]]
+transform = Transform3D(-4.37114e-08, 0, 2.06175, 0, 1, 0, -1, 0, -9.01222e-08, -0.324721, 12.8081, -8.39059)
+use_collision = true
+size = Vector3(2, 32.951, 17.3776)
+material = SubResource("StandardMaterial3D_uvhvm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h8cnx")
+camera_attributes = SubResource("CameraAttributesPractical_ff6jm")
+
+[node name="Floor" type="CSGBox3D" parent="." groups=["Kaboom"]]
+transform = Transform3D(25.605, 0, 0, 0, 3.165, 0, 0, 0, 15.55, 0, -2.14576, 1.93394)
+use_collision = true
+material = SubResource("StandardMaterial3D_h61u7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.184213, 4.78726, 0.891008)
+omni_range = 48.503
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.50403, 11.3256, 0.891008)
+visible = false
+omni_range = 48.503
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.24928, 11.3256, 0.891008)
+visible = false
+omni_range = 48.503

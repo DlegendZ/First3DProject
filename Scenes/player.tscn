@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://olqn75acajt7"]
+[gd_scene load_steps=10 format=3 uid="uid://olqn75acajt7"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_t6jlb"]
+[ext_resource type="PackedScene" uid="uid://b5fgayrgxl0a2" path="res://Scenes/explosion_particles.tscn" id="2_5jixp"]
+[ext_resource type="PackedScene" uid="uid://c5xgarhxnsgvo" path="res://Scenes/booster_particles.tscn" id="2_p8yn3"]
+[ext_resource type="PackedScene" uid="uid://clpgds8u82d7n" path="res://Scenes/success_particles.tscn" id="4_lxa6j"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_64ebb"]
-height = 2.60542
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdvg5"]
+size = Vector3(1.67, 4.825, 1.61)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_p0ifx"]
 
@@ -18,13 +21,15 @@ albedo_color = Color(0.933333, 0.0509804, 0, 1)
 axis_lock_linear_z = true
 axis_lock_angular_x = true
 axis_lock_angular_y = true
+max_contacts_reported = 1
+contact_monitor = true
 linear_damp = 1.0
 angular_damp = 3.0
 script = ExtResource("1_t6jlb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2.21222, 0, 0, 0, 2.21222, 0, 0, 0, 1.54855, 0, 0.391976, 0)
-shape = SubResource("CapsuleShape3D_64ebb")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.391976, 0)
+shape = SubResource("BoxShape3D_fdvg5")
 
 [node name="Cone" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.936007, 0, 0, 0, 0.936007, 0, 0, 0, 0.936007, 0, 1.49609, 0)
@@ -59,5 +64,23 @@ mesh = SubResource("CylinderMesh_bpsg6")
 skeleton = NodePath("../Body")
 surface_material_override/0 = SubResource("StandardMaterial3D_tbbxj")
 
+[node name="ExplosionParticles" parent="." instance=ExtResource("2_5jixp")]
+transform = Transform3D(1.70908, 0, 0, 0, 1.70908, 0, 0, 0, 1.70908, -0.446883, -1.83658, 0)
+
+[node name="BoosterParticlesRight" parent="." instance=ExtResource("2_p8yn3")]
+transform = Transform3D(2.92097, 0, 0, 0, 2.92097, 0, 0, 0, 2.92097, 0.498005, -1.8381, 0)
+emitting = false
+
+[node name="BoosterParticles" parent="." instance=ExtResource("2_p8yn3")]
+transform = Transform3D(1.70908, 0, 0, 0, 1.70908, 0, 0, 0, 1.70908, 0, -1.83658, 0)
+emitting = false
+
+[node name="BoosterParticlesLeft" parent="." instance=ExtResource("2_p8yn3")]
+transform = Transform3D(1.70908, 0, 0, 0, 1.70908, 0, 0, 0, 1.70908, -0.446883, -1.83658, 0)
+emitting = false
+
+[node name="SuccessParticles" parent="." instance=ExtResource("4_lxa6j")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
